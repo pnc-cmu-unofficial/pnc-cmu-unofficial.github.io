@@ -1,0 +1,133 @@
+# This file contains configuration flags to customize your site
+
+# Name of your site (displayed in the header)
+name: Program in Neural Computation @ Carnegie Mellon University
+
+# Short bio or description (displayed in the header)
+description: #Resources for and by students of the PhD Program in Neural Computation at CMU
+
+# URL of your avatar or profile pic (you could use your GitHub profile pic)
+avatar: #https://raw.githubusercontent.com/barryclark/jekyll-now/master/images/jekyll-logo.png
+
+# Flags below are optional
+# Includes an icon in the footer for each username you enter
+footer-links:
+  email: tnolan@andrew.cmu.edu
+  googlescholar: 
+  linkedin: 
+  github: 
+  instagram:
+  dribbble:
+  pinterest:
+  facebook:
+  flickr:
+  rss: # just type anything here for a working RSS icon
+  twitter: 
+  stackoverflow: # your stackoverflow profile, e.g. "users/50476/bart-kiers"
+  youtube: # channel/<your_long_string> or user/<user-name>
+  googleplus: # anything in your profile username that comes after plus.google.com/
+
+
+# Enter your Disqus shortname (not your username) to enable commenting on posts
+# You can find your shortname on the Settings page of your Disqus account
+disqus:
+
+# Enter your Google Analytics web tracking code (e.g. UA-2110908-2) to activate tracking
+google_analytics: 
+
+# Your website URL (e.g. http://barryclark.github.io or http://www.barryclark.co)
+# Used for Sitemap.xml and your RSS feed
+url: https://pnc-cmu-unofficial.github.io
+
+# If you're hosting your site at a Project repository on GitHub pages
+# (http://yourusername.github.io/repository-name)
+# and NOT your User repository (http://yourusername.github.io)
+# then add in the baseurl here, like this: "/repository-name"
+baseurl: 
+
+# !! You don't need to change any of the configuration flags below !!
+permalink: /:title/
+version: v1.2.0 # The release of Jekyll Now that you're using
+kramdown: # Jekyll 3 now only supports Kramdown for Markdown
+  input: GFM # Use GitHub flavored markdown, including triple backtick fenced code blocks
+  syntax_highlighter: rouge # Jekyll 3 and GitHub Pages now only support rouge for syntax highlighting
+  syntax_highlighter_opts:
+    css_class: 'highlight' # Use existing pygments syntax highlighting css
+
+
+permalink: /news/:categories/:year/:month/:day/:title:output_ext # put permalinks for posts UNDER news (excludes collections and main pages)
+
+# Collections
+collections:
+  research:
+    output: true
+    permalink: /:collection/:path/
+  projects:
+    output: true
+    permalink: /:collection/:path/
+  notes:
+    output: true
+    permalink: /:collection/:path/
+
+# Defaults
+defaults:
+  # _posts
+  - scope:
+      path: "news/"
+      type: posts
+    values:
+      layout: post
+      author_profile: false
+      read_time: false
+      comments: false
+      share: false
+      related: false
+      click-below: false
+  #_research
+  - scope:
+      path: ""
+      type: research
+    values:
+      layout: single
+      author_profile: false
+      share: false
+      comments: false
+  # _projects
+  - scope:
+      path: ""
+      type: projects
+    values:
+      layout: single
+      author_profile: false
+      share: false
+      comments: false
+  # _notebooks
+  - scope:
+      path: "notes/"
+      type: notes
+    values:
+      layout: single
+      author_profile: false
+      share: false
+      comments: false
+# Set the Sass partials directory, as we're using @imports
+sass:
+  style: :expanded # You might prefer to minify using :compressed
+
+# Use the following plug-ins
+gems:
+  - jekyll-sitemap # Create a sitemap using the official Jekyll sitemap gem
+  - jekyll-feed    # Create an Atom feed using the official Jekyll feed gem
+  - jekyll-gist
+  - jekyll-seo-tag
+plugins:
+  - jekyll-redirect-from # This will allow a redirect
+  - jekyll-twitter-plugin
+
+# Exclude these files from your production _site
+exclude:
+  - Gemfile
+  - Gemfile.lock
+  - LICENSE
+  - README.md
+  - CNAME
