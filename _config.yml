@@ -67,7 +67,7 @@ collections:
     permalink: /:collection/:path/
   notes:
     output: true
-    permalink: /:collection/:path/
+    permalink: /:path/
 
 # Defaults
 defaults:
